@@ -26,8 +26,14 @@ class WTFVIZ extends React.Component {
     })
   }
   loadMore() {
-    if (this.state.embargo >= this.state.feed.length) { this.setState({moreExists: false}) }
-    this.setState({embargo: this.state.embargo + this.state.step});
+    if (this.state.embargo + this.state.step >= this.state.feed.length) { 
+      this.setState({
+        moreExists: false,
+        embargo: this.state.feed.length
+      }) 
+    } else {
+      this.setState({embargo: this.state.embargo + this.state.step});
+    }
   }
   render() {
     return <div className="app-wrapper">
