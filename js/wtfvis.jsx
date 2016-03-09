@@ -6,7 +6,6 @@ import {Header, Footer} from './common.jsx';
 import Item from './item.jsx';
 
 import 'normalize.css';
-import 'font-awesome/scss/font-awesome.scss';
 import '../style/wtfviz.sass';
 
 
