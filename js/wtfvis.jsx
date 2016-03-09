@@ -18,7 +18,7 @@ class WTFVIZ extends React.Component {
   }
   initialLoad() {
     $.ajax({
-      url: '/articles/feed.json',
+      url: './articles/feed.json',
       success: (data) => {
         this.setState({feed: data.itemList});
         this.loadMore();
