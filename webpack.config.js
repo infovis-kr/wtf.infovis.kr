@@ -1,3 +1,5 @@
+var webpack = require("webpack");
+
 module.exports = {
   // context: __dirname + "/js/",
   entry: "./js/wtfvis.jsx",
@@ -28,6 +30,11 @@ module.exports = {
         test: /\.sass$/,
         loaders: ["style", "css", "sass?indentedSyntax=true&outputStyle=compressed"]
       },
+      {
+        test: /(\.png|\.gif)$/,
+        // exclude: /(node_modules|bower_components)/,
+        loader: 'file-loader?mimetype=image'
+      },
 
       // Font-awesome
       {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader?mimetype=image/svg+xml'},
@@ -37,6 +44,9 @@ module.exports = {
       {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader"},
     ]
 	},
+  plugins: [
+    new webpack.ProvidePlugin({"window.jQuery": "jquery"})
+  ],  
 
   devServer: {
     port: 8081,

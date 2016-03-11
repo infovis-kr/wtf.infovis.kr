@@ -98,6 +98,24 @@ a
       padding-top: 0
       position: relative
 
+    .item-media
+      padding: 1.5em
+
+      &.image
+        img
+          height: 200px
+          cursor: pointer
+
+      &.twitter
+        .twitter-tweet-rendered, .twitter-video-rendered
+          margin: 10px auto !important
+
+      &.youtube
+        iframe
+          display: block
+          margin: 10px auto
+
+
 .more
   padding: 0 0 3em
 

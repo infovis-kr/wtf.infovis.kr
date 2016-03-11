@@ -4,6 +4,7 @@ import $ from 'jquery';
 
 import {Header, Footer} from './common.jsx';
 import Item from './item.jsx';
+import PhotoswipeDom from './photoswipe.jsx';
 
 import 'normalize.css';
 import '../style/wtfviz.sass';
@@ -36,25 +37,26 @@ class WTFVIZ extends React.Component {
   }
   render() {
     return <div className="app-wrapper">
-            <Header/>
+             <Header/>
             
-            <div id="body">
-              <div className="wrapper item-list">
-                {this.state.feed.slice(0, this.state.embargo).map((q, i) => {return <Item {...q} index={i}/>;})}
-              </div>
+             <div id="body">
+               <div className="wrapper item-list">
+                 {this.state.feed.slice(0, this.state.embargo).map((q, i) => {return <Item {...q} index={i} key={i}/>;})}
+               </div>
+             </div>
+            
+             {(() => {
+               switch (this.state.moreExists) {
+                 case true:
+                   return <div className="wrapper more">
+                     <button onClick={this.loadMore.bind(this)}>more</button>
+                   </div>
+               }
+             })()}
+             <PhotoswipeDom/>
+             <Footer/>
 
-            </div>
-            
-              {(() => {
-                switch (this.state.moreExists) {
-                  case true:
-                    return <div className="wrapper more">
-                      <button onClick={this.loadMore.bind(this)}>more</button>
-                    </div>
-                }
-              })()}
-            <Footer/>
-          </div>
+           </div>
   }
 }
 
