@@ -4,8 +4,8 @@ class Header extends React.Component {
   render() {
     return <div id="header">
       <div className="wrapper">
-        <a href="/" className="logo">WTFVIZ.INFOVIS.KR</a>
-        <a href="/" className="github">
+        <a href="/" className="logo">WTF.INFOVIS.KR</a>
+        <a href="https://github.com/infovis-kr/wtf.infovis.kr" className="github">
           <i className="fa fa-github"></i> Github
         </a>
       </div>
