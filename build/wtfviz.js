@@ -29651,11 +29651,11 @@
 	          _react2.default.createElement(
 	            "a",
 	            { href: "/", className: "logo" },
-	            "WTFVIZ.INFOVIS.KR"
+	            "WTF.INFOVIS.KR"
 	          ),
 	          _react2.default.createElement(
 	            "a",
-	            { href: "/", className: "github" },
+	            { href: "https://github.com/infovis-kr/wtf.infovis.kr", className: "github" },
 	            _react2.default.createElement("i", { className: "fa fa-github" }),
 	            " Github"
 	          )
